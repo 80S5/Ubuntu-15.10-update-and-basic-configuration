@@ -1,0 +1,64 @@
+删除 Libreoffice
+	sudo apt-get remove libreoffice-common
+
+删除 Amazon的链接
+	sudo apt-get remove unity-webapps-common
+
+删掉基本不用的自带软件（用的时候再装也来得及）
+	sudo apt-get remove thunderbird totem rhythmbox empathy brasero simple-s    can gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-or    ca webbrowser-app gnome-sudoku  landscape-client-ui-install
+
+	 sudo apt-get remove onboard deja-dup
+	 这样系统就基本上干净了
+
+安装Vim
+     sudo apt-get install vim
+
+
+设置时间使用UTC
+     sudo vim /etc/default/rcS
+         将UTC=no改为UTC=yes
+
+
+安装Chrome
+     到 https://dl.google.com/linux/direct/google-chrome-stable_current_amd64    .deb 下载最新的安装文件
+
+	 sudo apt-get install libappindicator1 libindicator7
+	 sudo dpkg -i google-chrome-stable_current_amd64.deb
+	 sudo apt-get -f install
+	 然后到 Ubuntu Software Center 搜索 Chrome  安装就行
+
+安装Oracle Java         //这个最坑爹
+
+	 sudo add-apt-repository ppa:webupd8team/java
+	 sudo apt-get update
+	 sudo apt-get install oracle-java8-installer
+
+
+	 由于系统自带的是OpenJDK，卸载OpenJDK之后会带有残留，导致运行时第一行不是java的版本号，会是Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/jav    a/jayatanaag.jar这个提示，导致很多检测java版本号的脚本会运行出错，因此需要手动清除残留。
+	 java -version
+	 sudo rm /usr/share/upstart/sessions/jayatana.conf
+	 删除/usr/share/upstart/sessions/jayatana.conf文件，重启之后再运行jav    a -version就不会再有Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/    jayatanaag.jar提示了。
+
+
+安装git
+	 sudo apt-get install git
+	 git教程廖雪峰
+	 http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067    c8c017b000/
+
+
+vim的配置
+	if has("syntax")
+		syntax on
+	endif
+		 将这段代码的注释去掉
+
+
+		 set number          //显示行号
+		 set tabstop=4       //Tab设置为4个
+		 set autoindent      //自动缩进
+		 set ruler           //打开状态栏标尺
+		 set cindent         //自动缩进
+
+		 关于VIM的配置网上还有很多，需要的时候自己去找配置！
+
+
