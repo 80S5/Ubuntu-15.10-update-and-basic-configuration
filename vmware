@@ -1,0 +1,40 @@
+关于Ubuntu 上卸载 vmware player     vmware-workstation
+
+
+由于本人把电脑做成了单一 ubuntu系统，因公司还有些东西需要在win 上做
+
+所以装上虚拟机，来虚拟win，本来想把 vmware-workstation 装上来做，
+
+可是装上后各种不兼容，又要该内核、又该这个、那个的，
+
+所以直接卸载.
+
+
+/* 1. 查看安装的产品名称 */
+sudo vmware-installer -l
+
+
+/* 2. 根据查询到的产品名称卸载，我的是:vmware-workstation */ 
+sudo vmware-installer -u vmware-workstation
+
+
+这个也是要卸载的wmware player,执行下面的：
+sudo vmware-installer -u vmware playe
+
+卸载完后在运行
+sudo vmware-installer -l
+vmware-installer: command not found
+
+
+vmware这个卸载了以后，我又下载了 VirtuslBox
+
+直接在Terminal输入
+sudo apt-get install virtualbox
+
+等它跑完就好
+在Terminal 输入 virtualbox  直接启动
+
+
+关于win的 镜像文件 在自己的百度云  需要的邮箱我！   
+win7 64位的！
+
